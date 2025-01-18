@@ -1,19 +1,16 @@
 ﻿#include <iostream>
 using namespace std;
 
-// Функция распределения памяти
 int* allocateMemory(int size) {
     return new int[size];
 }
 
-// Функция инициализации массива
 void initializeArray(int* arr, int size) {
     for (int i = 0; i < size; ++i) {
         arr[i] = 0; 
     }
 }
 
-// Функция печати массива
 void printArray(const int* arr, int size) {
     if (size == 0) {
         cout << "Массив пуст" << endl;
@@ -26,12 +23,10 @@ void printArray(const int* arr, int size) {
     cout << endl;
 }
 
-// Функция удаления массива
 void deleteArray(int* arr) {
     delete[] arr;
 }
 
-// Функция добавления элемента в конец массива
 int* addElementToEnd(int* arr, int& size, int value) {
     int* newArr = new int[size + 1]; 
 
@@ -45,7 +40,6 @@ int* addElementToEnd(int* arr, int& size, int value) {
     return newArr;
 }
 
-// Функция вставки элемента по указанному индексу
 int* insertAtIndex(int* arr, int& size, int index, int value) {
     if (index < 0 || index > size) {
         cerr << "Индекс вне диапазона!" << endl;
@@ -70,7 +64,6 @@ int* insertAtIndex(int* arr, int& size, int index, int value) {
     return newArr;
 }
 
-// Функция удаления элемента по указанному индексу
 int* removeAtIndex(int* arr, int& size, int index) {
     if (index < 0 || index >= size) {
         cerr << "Индекс вне диапазона!" << endl;
